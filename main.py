@@ -6,6 +6,10 @@ import pandas as pd
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+	return{"message":"Welcome to the Nifty50 API!"}
+
 # Allow requests from GPT
 app.add_middleware(
     CORSMiddleware,
